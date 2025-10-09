@@ -2,58 +2,279 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>AFT - Advanced Football Training</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="main.css">
+  <title>AFT – Advanced Football Training</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Stili AFT -->
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-  <header class="main-header">
-    <div class="logo-area">
-      <img src="logo.png" alt="AFT Logo">
-      <span class="brand-title">AFT</span>
-    </div>
-    <nav class="main-nav">
-      <ul id="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="chi-siamo.html">Chi siamo</a></li>
-        <li><a href="staff.html">Staff</a></li>
-        <li><a href="servizi.html">Servizi</a></li>
-        <li><a href="storico.html">Storico</a></li>
-        <li><a href="eventi.html">Eventi</a></li>
-        <li><a href="recensioni.html">Recensioni</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Allenati come un professionista a Milano</h1>
-      <p>Formazione tecnica, metodo e passione: la tua crescita inizia da qui.</p>
-      <a class="btn primary" href="contatti.html">Contattaci</a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="../asset/Logo.png" alt="AFT Logo" width="80" height="80">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="chi-siamo.html">Chi siamo</a></li>
+          <li class="nav-item"><a class="nav-link" href="staff.html">Staff</a></li>
+          <li class="nav-item"><a class="nav-link" href="servizi.html">Servizi</a></li>
+          <li class="nav-item"><a class="nav-link" href="storico.html">Storico</a></li>
+          <li class="nav-item"><a class="nav-link" href="eventi.html">Eventi</a></li>
+          <li class="nav-item"><a class="nav-link" href="recensioni.html">Recensioni</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-primary" href="contatti.html">Contattaci</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- Hero -->
+<header class="hero hero-video position-relative overflow-hidden">
+  <!-- Video background -->
+  <video class="hero-bg" autoplay muted loop playsinline preload="metadata">
+    <source src="../asset/AFT_DEF1.mp4" type="video/mp4">
+    <!-- Fallback per browser che non supportano <video> -->
+  </video>
+
+  <!-- Overlay rosso/nero -->
+  <div class="hero-overlay"></div>
+
+  <!-- Contenuto -->
+  <div class="container position-relative">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="eyebrow mb-3">⚽ AFT – Advanced Football Training</div>
+        <h1 class="display-5 mb-3">Allenati come un professionista a Milano</h1>
+        <p class="lead mb-4">Formazione tecnica d’élite con metodo, analisi e passione per atleti consapevoli, autonomi e performanti.</p>
+        <div class="d-flex gap-2">
+          <a href="contatti.html" class="btn btn-accent btn-lg">Prenota una prova</a>
+          <a href="#servizi" class="btn btn-outline-light btn-lg">Scopri i servizi</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Intro -->
+  <section class="section-spaced bg-stripe">
+    <div class="container section-kicker text-center">
+      <p class="mb-2 icon-pill"><span>🏟️</span> Academy Professionistica</p>
+      <h2 class="fw-bold mb-3">L’Academy Professionistica di Perfezionamento Tecnico Calcistico</h2>
+      <p class="mb-0">Percorsi personalizzati che uniscono competenza, metodo e passione per potenziare area tecnica, motoria e mentale dell’atleta moderno.</p>
+      <div class="divider"></div>
+      <div class="d-flex flex-wrap justify-content-center gap-2">
+        <span class="pill-muted">Tecnico</span>
+        <span class="pill-muted">Motorio</span>
+        <span class="pill-muted">Cognitivo</span>
+        <span class="pill-muted">Psicologico</span>
+      </div>
     </div>
   </section>
 
-  <main>
-    <section class="section services-section">
-      <h2 class="section-title">I nostri servizi</h2>
-      <div class="services-list">
-        <!-- Servizi resi dinamici via JS -->
+  <!-- Cosa Offriamo -->
+  <section class="section" id="servizi">
+    <div class="container">
+      <p class="eyebrow mb-2">🔥 Cosa offriamo</p>
+      <div class="row grid-cols">
+        <div class="col-lg-6">
+          <div class="p-4 p-lg-5 rounded-4 card-elev">
+            <h3 class="card-title mb-3">Team di Maestri di Tecnica</h3>
+            <p>Allenatori certificati UEFA B e C, laureati in Scienze Motorie, presenti e attenti allo sviluppo a 360°.</p>
+            <ul class="list-unstyled list-compact">
+              <li><span class="check">✔</span> Sviluppo tecnico</li>
+              <li><span class="check">✔</span> Potenziamento motorio</li>
+              <li><span class="check">✔</span> Stimoli cognitivi</li>
+              <li><span class="check">✔</span> Supporto psicologico</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-4 p-lg-5 rounded-4 card-elev">
+            <h3 class="card-title mb-3">Percorsi su misura</h3>
+            <p>Programmazione individuale, obiettivi chiari e monitoraggio continuo con report strutturati post seduta.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge text-bg-light border">Report Lezione</span>
+              <span class="badge text-bg-light border">KPI tecnici</span>
+              <span class="badge text-bg-light border">Progress tracking</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section staff-section">
-      <h2 class="section-title">Team</h2>
-      <div class="staff-list"></div>
-    </section>
-  </main>
+  <!-- Moduli principali -->
+  <section class="section-spaced">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- Lezioni Individuali -->
+        <div class="col">
+          <div class="card card-elev h-100">
+            <div class="card-body">
+              <span class="icon-pill mb-2">👤 Individuali</span>
+              <h4 class="card-title">Lezioni Individuali</h4>
+              <p class="mb-3">Metodo su 4 aree per creare atleti autonomi ed efficaci, con preparazione completa e misurabile.</p>
+              <ul class="list-unstyled list-compact">
+                <li>💥 Tecnica e velocità</li>
+                <li>🧠 Lettura e scelte di gioco</li>
+                <li>🔁 Coordinazione</li>
+                <li>💪 Autoefficacia</li>
+              </ul>
+              <p class="small text-muted mb-0">📈 Report Lezione ad ogni seduta</p>
+            </div>
+          </div>
+        </div>
+        <!-- Lezioni di Gruppo -->
+        <div class="col">
+          <div class="card card-elev h-100">
+            <div class="card-body">
+              <span class="icon-pill mb-2">👥 Gruppi</span>
+              <h4 class="card-title">Lezioni di Gruppo</h4>
+              <p class="mb-3">La tecnica come soluzione reale di gioco con principi offensivi e difensivi applicati.</p>
+              <ul class="list-unstyled list-compact">
+                <li>Princìpi di gioco</li>
+                <li>Ritmo e transizioni</li>
+                <li>Decision making</li>
+              </ul>
+              <p class="small text-muted mb-0">📊 Report personalizzato per ogni atleta</p>
+            </div>
+          </div>
+        </div>
+        <!-- Portieri -->
+        <div class="col">
+          <div class="card card-elev h-100">
+            <div class="card-body">
+              <span class="icon-pill mb-2">🧤 Portieri</span>
+              <h4 class="card-title">Born to Fly – Portieri</h4>
+              <p class="mb-3">Percorso specifico dal gesto tecnico alla situazione reale per dominare spazio e lettura del gioco.</p>
+              <ul class="list-unstyled list-compact">
+                <li>Tecnica di base</li>
+                <li>Timing e uscite</li>
+                <li>Personalità tra i pali</li>
+              </ul>
+              <p class="small text-muted mb-0">📈 Report dettagliato ad ogni seduta</p>
+            </div>
+          </div>
+        </div>
+        <!-- SpeedLab -->
+        <div class="col">
+          <div class="card card-elev h-100">
+            <div class="card-body">
+              <span class="icon-pill mb-2">⚡ SpeedLab</span>
+              <h4 class="card-title">SpeedLab</h4>
+              <p class="mb-3">Programma esclusivo per controllo corporeo, meccanica di corsa e potenza degli arti inferiori.</p>
+              <ul class="list-unstyled list-compact">
+                <li>Controllo e adattamento</li>
+                <li>Biomeccanica</li>
+                <li>Spinta e potenza</li>
+              </ul>
+              <p class="small text-muted mb-0">📊 Test e misurazioni in ogni fase</p>
+            </div>
+          </div>
+        </div>
+        <!-- RecoveryLab -->
+        <div class="col">
+          <div class="card card-elev h-100">
+            <div class="card-body">
+              <span class="icon-pill mb-2">♻️ RecoveryLab</span>
+              <h4 class="card-title">RecoveryLab</h4>
+              <p class="mb-3">Rientro sicuro e funzionale post infortunio con masso-fisioterapista qualificato.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Screening -->
+        <div class="col">
+          <div class="card card-elev h-100">
+            <div class="card-body">
+              <span class="icon-pill mb-2">🆕📊 Screening</span>
+              <h4 class="card-title">Screening Atletico</h4>
+              <p class="mb-3">Valutazione fisica completa e personalizzata per pre-agonistica e agonistica.</p>
+              <div class="d-flex flex-wrap gap-2 mb-2">
+                <span class="badge badge-level">Pre-agonistica 2014–2017</span>
+                <span class="badge badge-level">Agonistica 2008–2013</span>
+              </div>
+              <ul class="list-unstyled list-compact">
+                <li>Forza, velocità, mobilità</li>
+                <li>Equilibrio e coordinazione</li>
+                <li>Resistenza e prevenzione</li>
+              </ul>
+              <p class="small text-muted mb-0">📏 Postural GRID, misure antropometriche, test con Bosi, Medusa, elastici, rialzi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="servizi.html" class="btn btn-outline-primary btn-lg">Tutti i servizi</a>
+      </div>
+    </div>
+  </section>
 
-  <footer class="main-footer">
-    <div>
-      <small>&copy; 2025 AFT – Advanced Football Training | P.IVA 0123456987 | Sede: Centro Sandro Pertini, Cornaredo (MI)</small>
+  <!-- Metodo & Report -->
+  <section class="section-spaced bg-light">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <p class="eyebrow mb-2">🎯 Metodo & Obiettivi</p>
+          <h3 class="fw-bold mb-3">Formare atleti consapevoli con progressi misurabili</h3>
+          <p class="mb-2">Ogni seduta è tracciata con Report Lezione per monitorare crescita, obiettivi e indicatori della prestazione.</p>
+          <ul class="list-unstyled list-compact">
+            <li><span class="check">✔</span> Percorso personalizzato e adattivo</li>
+            <li><span class="check">✔</span> KPI tecnici e motori</li>
+            <li><span class="check">✔</span> Continuità tra campo e performance</li>
+          </ul>
+          <a href="contatti.html" class="btn btn-primary">Prenota una valutazione</a>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-4 bg-white rounded-4 card-elev">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="icon-pill">📊 Report Lezione</span>
+              <span class="pill-muted">Progress tracking</span>
+            </div>
+            <p class="mb-2">Tracking delle aree: tecnica, decision making, coordinazione, autoefficacia.</p>
+            <div class="row g-2">
+              <div class="col-6"><div class="p-3 rounded-3 bg-light">Tecnica ↑</div></div>
+              <div class="col-6"><div class="p-3 rounded-3 bg-light">Velocità ↑</div></div>
+              <div class="col-6"><div class="p-3 rounded-3 bg-light">Coordinazione ↑</div></div>
+              <div class="col-6"><div class="p-3 rounded-3 bg-light">Autoefficacia ↑</div></div>
+            </div>
+            <p class="footnote mt-3 mb-0">Esempio illustrativo di parametri monitorati nel tempo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA finale -->
+  <section class="section-spaced text-center">
+    <div class="container">
+      <h3 class="fw-bold mb-2">Pronto per il prossimo livello?</h3>
+      <p class="mb-4">Prenota uno screening o una lezione di prova e inizia il percorso AFT.</p>
+      <div class="d-flex justify-content-center gap-2">
+        <a class="btn btn-primary btn-lg" href="contatti.html">Contattaci</a>
+        <a class="btn btn-outline-secondary btn-lg" href="recensioni.html">Leggi le recensioni</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 border-top footer-dark">
+    <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-2">
+      <small>&copy; 2025 AFT – Advanced Football Training</small>
+      <small><br>📍 Centro Sandro Pertini, Cornaredo (MI)</small>
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

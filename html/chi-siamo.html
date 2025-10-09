@@ -3,48 +3,219 @@
 <head>
   <meta charset="UTF-8" />
   <title>Chi siamo - AFT</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Stili AFT -->
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-  <header class="main-header">
-    <div class="logo-area">
-      <img src="logo.png" alt="Logo AFT">
-      <span class="brand-title">AFT</span>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="../asset/Logo.png" alt="AFT Logo" width="48" height="48">
+        <span class="brand-badge">AFT</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item active"><a class="nav-link active" aria-current="page" href="chi-siamo.html">Chi siamo</a></li>
+          <li class="nav-item"><a class="nav-link" href="staff.html">Staff</a></li>
+          <li class="nav-item"><a class="nav-link" href="servizi.html">Servizi</a></li>
+          <li class="nav-item"><a class="nav-link" href="storico.html">Storico</a></li>
+          <li class="nav-item"><a class="nav-link" href="eventi.html">Eventi</a></li>
+          <li class="nav-item"><a class="nav-link" href="recensioni.html">Recensioni</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-primary" href="contatti.html">Contattaci</a></li>
+        </ul>
+      </div>
     </div>
-    <nav class="main-nav">
-      <ul id="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="chi-siamo.html" class="active">Chi siamo</a></li>
-        <li><a href="staff.html">Staff</a></li>
-        <li><a href="servizi.html">Servizi</a></li>
-        <li><a href="storico.html">Storico</a></li>
-        <li><a href="eventi.html">Eventi</a></li>
-        <li><a href="recensioni.html">Recensioni</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-      </ul>
-    </nav>
+  </nav>
+
+  <!-- Hero compatta con breadcrumb -->
+  <header class="py-5 bg-stripe border-bottom">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-2">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Chi siamo</li>
+        </ol>
+      </nav>
+      <h1 class="fw-bold mb-2">Chi siamo</h1>
+      <p class="mb-0">AFT è un centro d’eccellenza dedicato allo sviluppo tecnico, motorio e mentale dell’atleta moderno.</p>
+    </div>
   </header>
 
-  <main class="section">
-    <h1>Chi siamo</h1>
-    <p>AFT è un centro d’eccellenza dedicato allo sviluppo tecnico, motorio e mentale dell’atleta moderno. La nostra filosofia unisce competenza, metodo e passione per crescere calciatori consapevoli, autonomi e performanti.</p>
-    
-    <h2>La nostra Mission</h2>
-    <p>Offrire formazione personalizzata di alto livello grazie a un team di maestri tecnici certificati UEFA e professionisti qualificati nel settore motorio e psicologico.</p>
+  <main>
+    <!-- Mission -->
+    <section class="section-spaced">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <p class="eyebrow mb-2">🎯 Mission</p>
+            <h2 class="fw-bold mb-3">Formazione personalizzata d’élite</h2>
+            <p>La filosofia AFT unisce competenza, metodo e passione per crescere calciatori consapevoli, autonomi e performanti, con percorsi su misura e obiettivi chiari.</p>
+            <ul class="list-unstyled list-compact">
+              <li><span class="check">✔</span> Team certificato UEFA (B/C) e lauree in Scienze Motorie</li>
+              <li><span class="check">✔</span> Monitoraggio continuo tramite Report Lezione</li>
+              <li><span class="check">✔</span> Integrazione tecnica, motoria e mentale</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <div class="p-4 p-lg-5 rounded-4 card-elev">
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="icon-pill">💥 Tecnico</span>
+                <span class="icon-pill">⚡ Motorio</span>
+                <span class="icon-pill">🧠 Cognitivo</span>
+                <span class="icon-pill">🧩 Psicologico</span>
+              </div>
+              <p class="mb-0">Il percorso AFT promuove autonomia decisionale, qualità tecnica e consapevolezza tattica, con progressi misurati a ogni seduta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <h2>I nostri valori</h2>
-    <ul>
-      <li>Professionalità e preparazione scientifica</li>
-      <li>Passione per il calcio e crescita continua</li>
-      <li>Atleti consapevoli, completi e felici</li>
-      <li>Innovazione e monitoraggio dei progressi</li>
-    </ul>
+    <!-- Valori -->
+    <section class="section-spaced bg-light">
+      <div class="container">
+        <p class="eyebrow mb-2">🏁 Valori</p>
+        <h2 class="fw-bold mb-4">I nostri valori</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body">
+                <h5 class="card-title">Professionalità</h5>
+                <p class="mb-0">Metodologie scientifiche, cura dei dettagli, percorsi basati su evidenze e obiettivi misurabili.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body">
+                <h5 class="card-title">Passione</h5>
+                <p class="mb-0">Cultura del miglioramento continuo e ambiente motivante per ogni atleta.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body">
+                <h5 class="card-title">Centralità dell’atleta</h5>
+                <p class="mb-0">Percorsi su misura per un atleta consapevole, completo e sereno.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body">
+                <h5 class="card-title">Innovazione</h5>
+                <p class="mb-0">Strumenti di valutazione, KPI e report per decisioni tecniche informate.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metodo AFT -->
+    <section class="section-spaced">
+      <div class="container">
+        <p class="eyebrow mb-2">🧭 Metodo AFT</p>
+        <h2 class="fw-bold mb-4">Dalla tecnica al gioco</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="p-4 rounded-4 card-elev h-100">
+              <h5 class="card-title">Lezioni individuali</h5>
+              <ul class="list-unstyled list-compact mb-0">
+                <li>Tecnica e velocità</li>
+                <li>Lettura e scelte di gioco</li>
+                <li>Coordinazione</li>
+                <li>Autoefficacia</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-4 rounded-4 card-elev h-100">
+              <h5 class="card-title">Lezioni di gruppo</h5>
+              <ul class="list-unstyled list-compact mb-0">
+                <li>Princìpi offensivi e difensivi</li>
+                <li>Ritmo e transizioni</li>
+                <li>Decision making</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 mt-1">
+          <div class="col-md-6">
+            <div class="p-4 rounded-4 card-elev h-100">
+              <h5 class="card-title">Portieri – Born to Fly</h5>
+              <p class="mb-0">Dal gesto tecnico alla situazione reale per dominare spazio, tempi e personalità tra i pali.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-4 rounded-4 card-elev h-100">
+              <h5 class="card-title">SpeedLab & RecoveryLab</h5>
+              <p class="mb-0">Sviluppo della velocità e recupero post infortunio per performance e rientro in sicurezza.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Perché AFT -->
+    <section class="section-spaced bg-stripe">
+      <div class="container">
+        <p class="eyebrow mb-2">✅ Perché AFT</p>
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <h2 class="fw-bold mb-3">Risultati concreti, percorso chiaro</h2>
+            <ul class="list-unstyled list-compact">
+              <li><span class="check">✔</span> Report Lezione e progress tracking</li>
+              <li><span class="check">✔</span> Obiettivi condivisi e verificabili</li>
+              <li><span class="check">✔</span> Comunicazione costante con atleti e famiglie</li>
+            </ul>
+            <a href="servizi.html" class="btn btn-outline-primary">Scopri i servizi</a>
+          </div>
+          <div class="col-lg-5">
+            <div class="p-4 bg-white rounded-4 card-elev">
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <span class="icon-pill">📊 KPI & Report</span>
+                <span class="pill-muted">Trasparenza</span>
+              </div>
+              <p class="mb-0">Dati chiari e azionabili per guidare il miglioramento tecnico, motorio e cognitivo stagione dopo stagione.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-spaced text-center">
+      <div class="container">
+        <h3 class="fw-bold mb-2">Vuoi conoscere il nostro metodo da vicino?</h3>
+        <p class="mb-4">Prenota una valutazione o una lezione di prova.</p>
+        <a class="btn btn-primary btn-lg" href="contatti.html">Contattaci</a>
+      </div>
+    </section>
   </main>
 
-  <footer class="main-footer">
-    <small>&copy; 2025 AFT – Advanced Football Training</small>
+  <!-- Footer -->
+  <footer class="py-4 border-top footer-dark">
+    <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-2">
+      <small>&copy; 2025 AFT – Advanced Football Training</small>
+      <small>P.IVA 0123456987 – Centro Sandro Pertini, Cornaredo (MI)</small>
+      <small><a href="privacy.html" class="text-decoration-none">Privacy</a></small>
+    </div>
   </footer>
-  <script src="main.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
