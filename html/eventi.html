@@ -2,53 +2,338 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Eventi - AFT</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Eventi – AFT Èlite Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-  <header class="main-header">
-    <div class="logo-area">
-      <img src="logo.png" alt="Logo AFT">
-      <span class="brand-title">AFT</span>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="../asset/Logo.png" alt="AFT Logo" width="48" height="48">
+        <span class="brand-badge">AFT</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="chi-siamo.html">Chi siamo</a></li>
+          <li class="nav-item"><a class="nav-link" href="staff.html">Staff</a></li>
+          <li class="nav-item"><a class="nav-link" href="servizi.html">Servizi</a></li>
+          <li class="nav-item"><a class="nav-link" href="storico.html">Storico</a></li>
+          <li class="nav-item active"><a class="nav-link active" aria-current="page" href="eventi.html">Eventi</a></li>
+          <li class="nav-item"><a class="nav-link" href="recensioni.html">Recensioni</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-primary" href="contatti.html">Contattaci</a></li>
+        </ul>
+      </div>
     </div>
-    <nav class="main-nav">
-      <ul id="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="chi-siamo.html">Chi siamo</a></li>
-        <li><a href="staff.html">Staff</a></li>
-        <li><a href="servizi.html">Servizi</a></li>
-        <li><a href="storico.html">Storico</a></li>
-        <li><a href="eventi.html" class="active">Eventi</a></li>
-        <li><a href="recensioni.html">Recensioni</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-      </ul>
-    </nav>
+  </nav>
+
+  <!-- Hero -->
+  <header class="py-5 bg-stripe border-bottom">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-2">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Eventi</li>
+        </ol>
+      </nav>
+      <h1 class="fw-bold mb-2">Eventi & Programmi Speciali</h1>
+      <p class="mb-0">Workshop, Masterclass, Summer Academy e Pre-Season per alzare la performance con metodo, qualità e divertimento.</p>
+    </div>
   </header>
 
-  <main class="section">
-    <h1>Eventi & Programmi Speciali</h1>
-    <article>
-      <h2>Workshop Mensile</h2>
-      <p>Ogni mese un approfondimento tematico tecnico, mentale o atletico per migliorare la preparazione.</p>
-    </article>
-    <article>
-      <h2>Masterclass Vacanze di Natale</h2>
-      <p>Allenamenti di gruppo esclusivi durante le festività natalizie per mantenere il ritmo e la qualità del gioco.</p>
-    </article>
-    <article>
-      <h2>Summer Academy</h2>
-      <p>Esperienza formativa estiva con allenamenti, test e attività dedicate alla performance e consapevolezza.</p>
-    </article>
-    <article>
-      <h2>Pre Season</h2>
-      <p>Programma di preparazione precampionato ad agosto/settembre per iniziare la stagione al massimo della forma.</p>
-    </article>
+  <main>
+
+    <!-- Filtri -->
+    <section class="py-4 border-bottom bg-light">
+      <div class="container">
+        <div class="d-flex flex-wrap gap-2">
+          <button class="btn btn-primary btn-sm filter-btn active" data-filter="tutti">Tutti</button>
+          <button class="btn btn-outline-secondary btn-sm filter-btn" data-filter="workshop">🛠 Workshop</button>
+          <button class="btn btn-outline-secondary btn-sm filter-btn" data-filter="masterclass">🎯 Masterclass</button>
+          <button class="btn btn-outline-secondary btn-sm filter-btn" data-filter="academy">☀️ Academy</button>
+          <button class="btn btn-outline-secondary btn-sm filter-btn" data-filter="preseason">⚽ Pre-Season</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Griglia eventi -->
+    <section class="section-spaced">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4" id="griglia-eventi">
+
+          <!-- Workshop Mensile -->
+          <div class="col event-item" data-category="workshop">
+            <div class="card card-elev h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <span class="icon-pill">🛠 Workshop</span>
+                  <span class="badge text-bg-secondary">Mensile</span>
+                </div>
+                <h4 class="card-title">Workshop Mensile</h4>
+                <p>Approfondimento tecnico mirato per trasformare una skill in vantaggio di gioco.</p>
+                <ul class="list-unstyled list-compact mb-3">
+                  <li><span class="check">✔</span> Focus tematico</li>
+                  <li><span class="check">✔</span> Esercitazioni applicate</li>
+                  <li><span class="check">✔</span> Report riassuntivo</li>
+                </ul>
+                <div class="mt-auto">
+                  <a href="contatti.html" class="btn btn-primary w-100">Iscriviti</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Masterclass – Tecnica di Tiro -->
+          <div class="col event-item" data-category="masterclass">
+            <div class="card card-elev h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <span class="icon-pill">🎯 Masterclass</span>
+                  <span class="badge text-bg-danger">Posti limitati</span>
+                </div>
+                <h4 class="card-title">Masterclass – Tecnica di Tiro</h4>
+                <p>Tecnica di tiro, impatto palla e varianti per massimizzare efficacia e precisione.</p>
+                <ul class="list-unstyled list-compact mb-3">
+                  <li>Preparazione e punto di contatto</li>
+                  <li>Varianti: interno, collo, esterno</li>
+                  <li>Rasoterra, al volo, giro</li>
+                </ul>
+                <div class="mt-auto">
+                  <a href="contatti.html" class="btn btn-primary w-100">Prenota</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summer Academy -->
+          <div class="col event-item" data-category="academy">
+            <div class="card card-elev h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <span class="icon-pill">☀️ Summer Academy</span>
+                  <span class="badge text-bg-warning text-dark">Giugno–Luglio</span>
+                </div>
+                <h4 class="card-title">Summer Academy</h4>
+                <p>Settimane estive con doppia seduta, piscina, tornei e kit ufficiale AFT.</p>
+                <ul class="list-unstyled list-compact mb-3">
+                  <li>5 turni: 09/06 – 11/07</li>
+                  <li>Cornaredo – Report e progress tracking</li>
+                  <li>SpeedLab, Born to Fly, Special guest</li>
+                </ul>
+                <div class="mt-auto">
+                  <a href="#summer-details" class="btn btn-primary w-100">Scopri i dettagli ↓</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pre-Season -->
+          <div class="col event-item" data-category="preseason">
+            <div class="card card-elev h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <span class="icon-pill">⚽ Pre-Season</span>
+                  <span class="badge text-bg-dark">Ago–Set</span>
+                </div>
+                <h4 class="card-title">Pre-Season Academy</h4>
+                <p>Preparazione precampionato con SpeedLab e scouting da parte di società professionistiche.</p>
+                <ul class="list-unstyled list-compact mb-3">
+                  <li>Doppia seduta giornaliera</li>
+                  <li>Born to Fly per portieri</li>
+                  <li>Società professionistiche in osservazione</li>
+                </ul>
+                <div class="mt-auto">
+                  <a href="#preseason-details" class="btn btn-primary w-100">Scopri i dettagli ↓</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Avviso date -->
+        <div class="alert alert-light border mt-4 mb-0" role="alert">
+          <small>⚠️ Le date possono variare in base a disponibilità e numero di partecipanti. La conferma è richiesta in fase di iscrizione.</small>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── DETTAGLI SUMMER ACADEMY ── -->
+    <section class="section-spaced bg-light" id="summer-details">
+      <div class="container">
+        <p class="eyebrow mb-2">☀️ Summer Academy 2025</p>
+        <h2 class="fw-bold mb-4">Dettagli Summer Academy</h2>
+
+        <!-- Turni -->
+        <div class="row g-3 mb-4">
+          <div class="col-12">
+            <p class="fw-semibold mb-2">📅 Periodi disponibili</p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge text-bg-light border fs-6 fw-normal px-3 py-2">09 – 13 giugno</span>
+              <span class="badge text-bg-light border fs-6 fw-normal px-3 py-2">16 – 20 giugno</span>
+              <span class="badge text-bg-light border fs-6 fw-normal px-3 py-2">23 – 27 giugno</span>
+              <span class="badge text-bg-light border fs-6 fw-normal px-3 py-2">30 giugno – 4 luglio</span>
+              <span class="badge text-bg-light border fs-6 fw-normal px-3 py-2">7 – 11 luglio</span>
+            </div>
+          </div>
+          <div class="col-12">
+            <p class="fw-semibold mb-1">📍 Location</p>
+            <p class="mb-0">Cornaredo – Via dello Sport, 70
+              <a href="https://maps.google.com/?q=Via+dello+Sport+70+Cornaredo" target="_blank" class="ms-2 small"
+                 rel="noopener">Visualizza su Google Maps →</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+
+          <!-- Giornata tipo -->
+          <div class="col-md-6">
+            <div class="card card-elev h-100">
+              <div class="card-body">
+                <h5 class="card-title mb-3">🗓 Giornata tipo</h5>
+                <ul class="list-unstyled list-compact mb-0">
+                  <li>🟢 Accoglienza & Briefing</li>
+                  <li>⚽ Sessione tecnica mattutina</li>
+                  <li>🏊 Piscina</li>
+                  <li>🍽 Pranzo & Animazione</li>
+                  <li>⚽ Seconda sessione pomeridiana</li>
+                  <li>📊 Debriefing</li>
+                  <li>🟠 Merenda & Uscita</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metodo & Servizi -->
+          <div class="col-md-6">
+            <div class="card card-elev h-100">
+              <div class="card-body">
+                <h5 class="card-title mb-3">🏅 Metodo & Performance</h5>
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge text-bg-light border">Doppia seduta</span>
+                  <span class="badge text-bg-light border">Born to Fly</span>
+                  <span class="badge text-bg-light border">SpeedLab</span>
+                  <span class="badge text-bg-light border">Special guest</span>
+                  <span class="badge text-bg-light border">Scouting</span>
+                </div>
+                <h5 class="card-title mb-3">🎒 Esperienza & Servizi</h5>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge text-bg-light border">Kit allenamento</span>
+                  <span class="badge text-bg-light border">Tornei tematici</span>
+                  <span class="badge text-bg-light border">Pranzo & Merenda</span>
+                  <span class="badge text-bg-light border">Piscina</span>
+                  <span class="badge text-bg-light border">Animazione</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="d-flex gap-2 flex-wrap mt-4">
+          <a href="contatti.html" class="btn btn-primary">Richiedi disponibilità</a>
+          <a href="contatti.html" class="btn btn-outline-primary">Scrivici</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DETTAGLI PRE-SEASON ── -->
+    <section class="section-spaced" id="preseason-details">
+      <div class="container">
+        <p class="eyebrow mb-2">⚽ Pre-Season Academy</p>
+        <h2 class="fw-bold mb-4">Dettagli Pre-Season</h2>
+
+        <div class="row g-4">
+
+          <!-- Cosa offriamo -->
+          <div class="col-md-6">
+            <div class="card card-elev h-100">
+              <div class="card-body">
+                <h5 class="card-title mb-3">🏋️ Cosa offriamo</h5>
+                <ul class="list-unstyled list-compact mb-0">
+                  <li><span class="check">✔</span> Doppia seduta giornaliera</li>
+                  <li><span class="check">✔</span> Born to Fly – percorso portieri</li>
+                  <li><span class="check">✔</span> SpeedLab – sviluppo velocità</li>
+                  <li><span class="check">✔</span> Scouting con società professionistiche</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Giornata tipo -->
+          <div class="col-md-6">
+            <div class="card card-elev h-100">
+              <div class="card-body">
+                <h5 class="card-title mb-3">🗓 Giornata tipo</h5>
+                <ul class="list-unstyled list-compact mb-0">
+                  <li>🟢 Accoglienza & Briefing</li>
+                  <li>⚽ Prima sessione tecnica</li>
+                  <li>⚡ SpeedLab / Born to Fly</li>
+                  <li>🍽 Pausa pranzo</li>
+                  <li>⚽ Seconda sessione tattica</li>
+                  <li>📊 Debriefing & Report</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-4">
+          <a href="contatti.html" class="btn btn-primary">Prenota Pre-Season</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA finale -->
+    <section class="section-spaced bg-stripe text-center">
+      <div class="container">
+        <h3 class="fw-bold mb-2">Partecipa al prossimo evento</h3>
+        <p class="mb-4">Iscrizioni attive e posti limitati per ogni programma.</p>
+        <a class="btn btn-primary btn-lg" href="contatti.html">Richiedi disponibilità</a>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="main-footer">
-    <small>&copy; 2025 AFT – Advanced Football Training</small>
+  <!-- Footer -->
+  <footer class="py-4 border-top footer-dark">
+    <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-2">
+      <small>&copy; 2026 AFT Èlite Academy</small>
+      <small>📍 Centro Sportivo S. Pertini – Via dello Sport 70, Cornaredo (MI)</small>
+    </div>
   </footer>
-  <script src="main.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Filtri JS -->
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active', 'btn-primary');
+          b.classList.add('btn-outline-secondary');
+        });
+        this.classList.add('active', 'btn-primary');
+        this.classList.remove('btn-outline-secondary');
+
+        const filter = this.dataset.filter;
+        document.querySelectorAll('.event-item').forEach(item => {
+          item.style.display = (filter === 'tutti' || item.dataset.category === filter) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>

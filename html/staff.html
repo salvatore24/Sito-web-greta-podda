@@ -2,39 +2,728 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Staff - AFT</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Staff – AFT Èlite Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .staff-photo {
+      width: 96px; height: 96px;
+      object-fit: cover; border-radius: 50%;
+      border: 3px solid var(--bs-light, #f8f9fa);
+    }
+    .badge-founder {
+      background-color: #c0392b; color: #fff;
+      font-size: .7rem; padding: .25em .6em;
+      border-radius: 999px; letter-spacing: .03em;
+    }
+    .staff-card-inner { text-align: center; }
+    .skill-tags .badge { font-size: .7rem; }
+  </style>
 </head>
 <body>
-  <header class="main-header">
-    <div class="logo-area">
-      <img src="logo.png" alt="Logo AFT">
-      <span class="brand-title">AFT</span>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="../asset/Logo.png" alt="AFT Logo" width="48" height="48">
+        <span class="brand-badge">AFT</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="chi-siamo.html">Chi siamo</a></li>
+          <li class="nav-item active"><a class="nav-link active" aria-current="page" href="staff.html">Staff</a></li>
+          <li class="nav-item"><a class="nav-link" href="servizi.html">Servizi</a></li>
+          <li class="nav-item"><a class="nav-link" href="storico.html">Storico</a></li>
+          <li class="nav-item"><a class="nav-link" href="eventi.html">Eventi</a></li>
+          <li class="nav-item"><a class="nav-link" href="recensioni.html">Recensioni</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-primary" href="contatti.html">Contattaci</a></li>
+        </ul>
+      </div>
     </div>
-    <nav class="main-nav">
-      <ul id="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="chi-siamo.html">Chi siamo</a></li>
-        <li><a href="staff.html" class="active">Staff</a></li>
-        <li><a href="servizi.html">Servizi</a></li>
-        <li><a href="storico.html">Storico</a></li>
-        <li><a href="eventi.html">Eventi</a></li>
-        <li><a href="recensioni.html">Recensioni</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-      </ul>
-    </nav>
+  </nav>
+
+  <!-- Hero -->
+  <header class="py-5 bg-stripe border-bottom">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-2">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Staff</li>
+        </ol>
+      </nav>
+      <h1 class="fw-bold mb-2">Il Team</h1>
+      <p class="mb-0">16 maestri di tecnica calcistica professionisti qualificati: UEFA B/C, lauree in Scienze Motorie e specializzazioni tecniche.</p>
+    </div>
   </header>
 
-  <main class="section staff-section">
-    <h1>Il nostro team</h1>
-    <p>15 mister professionisti e qualificati ad alto livello tecnico e motorio.</p>
-    <div class="staff-list" id="staff"></div>
+  <main>
+    <section class="section-spaced">
+      <div class="container">
+
+        <!-- ── FONDATORI ── -->
+        <p class="eyebrow mb-3">👑 Fondatori</p>
+        <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+
+          <!-- Greta Podda -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/greta-podda.jpg" alt="Greta Podda" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=GP'">
+                <div class="mb-1"><span class="badge-founder">⭐ Fondatrice</span></div>
+                <h5 class="fw-bold mt-2 mb-0">Greta Podda</h5>
+                <p class="text-muted small mb-2">Direttrice Tecnica · Laurea in Scienze Motorie</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">Tecnica</span>
+                  <span class="badge text-bg-light border">SpeedLab</span>
+                  <span class="badge text-bg-light border">RecoveryLab</span>
+                  <span class="badge text-bg-light border">Decision Making</span>
+                  <span class="badge text-bg-light border">1vs1</span>
+                </div>
+                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-greta">
+                  Scopri di più
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Donato -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/donato.jpg" alt="Donato" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=D'">
+                <div class="mb-1"><span class="badge-founder">⭐ Fondatore</span></div>
+                <h5 class="fw-bold mt-2 mb-0">Donato</h5>
+                <p class="text-muted small mb-2">Responsabile Tecnico</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">Tecnica</span>
+                  <span class="badge text-bg-light border">Tattica</span>
+                </div>
+                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-donato">
+                  Scopri di più
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ── STAFF TECNICO ── -->
+        <p class="eyebrow mb-3">👥 Staff Tecnico</p>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+
+          <!-- Andrea Fornari -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/andrea-fornari.jpg" alt="Andrea Fornari" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=AF'">
+                <h5 class="fw-bold mb-0">Andrea Fornari</h5>
+                <p class="text-muted small mb-2">Istruttore Tecnico · UEFA B · Sc. Motorie</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">UEFA B</span>
+                  <span class="badge text-bg-light border">SpeedLab</span>
+                  <span class="badge text-bg-light border">Psicocinetica</span>
+                  <span class="badge text-bg-light border">Screening</span>
+                </div>
+                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-andrea">
+                  Scopri di più
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Yoorch Jerzy Alva Torpoco -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/yoorch-torpoco.jpg" alt="Yoorch Torpoco" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=YT'">
+                <h5 class="fw-bold mb-0">Yoorch Jerzy Alva Torpoco</h5>
+                <p class="text-muted small mb-2">Allenatore Tecnico · Ex Pro Futsal</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">Controllo palla</span>
+                  <span class="badge text-bg-light border">Dribbling</span>
+                  <span class="badge text-bg-light border">Tattica</span>
+                </div>
+                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-yoorch">
+                  Scopri di più
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alessandro Sangermano -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/alessandro-sangermano.jpg" alt="Alessandro Sangermano" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=AS'">
+                <h5 class="fw-bold mb-0">Alessandro Sangermano</h5>
+                <p class="text-muted small mb-2">Istruttore Tecnico · Football & Management</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">Tecnica individuale</span>
+                  <span class="badge text-bg-light border">Giovanili</span>
+                  <span class="badge text-bg-light border">Mentalità</span>
+                </div>
+                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-ales">
+                  Scopri di più
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Daniele Addonato -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/daniele-addonato.jpg" alt="Daniele Addonato" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=DA'">
+                <h5 class="fw-bold mb-0">Daniele Addonato</h5>
+                <p class="text-muted small mb-2">Allenatore · Formazione Tecnico-Tattica</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">Lettura del gioco</span>
+                  <span class="badge text-bg-light border">Tattica</span>
+                  <span class="badge text-bg-light border">Mentalità</span>
+                </div>
+                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-daniele">
+                  Scopri di più
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Santiago Manuel Mina -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/santiago-mina.jpg" alt="Santiago Mina" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=SM'">
+                <h5 class="fw-bold mb-0">Santiago Manuel Mina</h5>
+                <p class="text-muted small mb-2">Coach · Settore Giovanile</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">Giovanili</span>
+                  <span class="badge text-bg-light border">Empatia</span>
+                  <span class="badge text-bg-light border">Crescita</span>
+                </div>
+                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-santiago">
+                  Scopri di più
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Giulio Todisco -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/giulio-todisco.jpg" alt="Giulio Todisco" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=GT'">
+                <h5 class="fw-bold mb-0">Giulio Todisco</h5>
+                <p class="text-muted small mb-2">Allenatore Calcio Giovanile · UEFA B</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">UEFA B</span>
+                  <span class="badge text-bg-light border">Giovanili</span>
+                  <span class="badge text-bg-light border">Valori</span>
+                </div>
+                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-giulio">
+                  Scopri di più
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Damiano Rastelli -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/damiano-rastelli.jpg" alt="Damiano Rastelli" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=DR'">
+                <h5 class="fw-bold mb-0">Damiano Rastelli</h5>
+                <p class="text-muted small mb-2">Coach sul Campo · Serie D</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">Tecnica</span>
+                  <span class="badge text-bg-light border">1vs1</span>
+                  <span class="badge text-bg-light border">Decision Making</span>
+                </div>
+                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-damiano">
+                  Scopri di più
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mattia Pacifico -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/mattia-pacifico.jpg" alt="Mattia Pacifico" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=MP'">
+                <h5 class="fw-bold mb-0">Mattia Pacifico</h5>
+                <p class="text-muted small mb-2">Laureando Scienze Motorie · Allenatore Under 10</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">Giovanili</span>
+                  <span class="badge text-bg-light border">Tecnica</span>
+                  <span class="badge text-bg-light border">Sviluppo</span>
+                </div>
+                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-mattia">
+                  Scopri di più
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Placeholder 9 -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/placeholder.jpg" alt="Membro Staff" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=?'">
+                <h5 class="fw-bold mb-0 text-muted">In arrivo</h5>
+                <p class="text-muted small mb-2">Staff AFT</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">AFT</span>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm disabled">Bio in arrivo</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Placeholder 10 -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/placeholder.jpg" alt="Membro Staff" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=?'">
+                <h5 class="fw-bold mb-0 text-muted">In arrivo</h5>
+                <p class="text-muted small mb-2">Staff AFT</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">AFT</span>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm disabled">Bio in arrivo</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Placeholder 11 -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/placeholder.jpg" alt="Membro Staff" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=?'">
+                <h5 class="fw-bold mb-0 text-muted">In arrivo</h5>
+                <p class="text-muted small mb-2">Staff AFT</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">AFT</span>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm disabled">Bio in arrivo</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Placeholder 12 -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/placeholder.jpg" alt="Membro Staff" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=?'">
+                <h5 class="fw-bold mb-0 text-muted">In arrivo</h5>
+                <p class="text-muted small mb-2">Staff AFT</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">AFT</span>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm disabled">Bio in arrivo</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Placeholder 13 -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/placeholder.jpg" alt="Membro Staff" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=?'">
+                <h5 class="fw-bold mb-0 text-muted">In arrivo</h5>
+                <p class="text-muted small mb-2">Staff AFT</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">AFT</span>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm disabled">Bio in arrivo</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Placeholder 14 -->
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body staff-card-inner py-4">
+                <img src="../asset/staff/placeholder.jpg" alt="Membro Staff" class="staff-photo mb-3"
+                     onerror="this.src='https://placehold.co/96x96/e0e0e0/555?text=?'">
+                <h5 class="fw-bold mb-0 text-muted">In arrivo</h5>
+                <p class="text-muted small mb-2">Staff AFT</p>
+                <div class="skill-tags d-flex flex-wrap justify-content-center gap-1 mb-3">
+                  <span class="badge text-bg-light border">AFT</span>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm disabled">Bio in arrivo</button>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- fine griglia staff -->
+
+        <!-- Blocco certificazioni -->
+        <div class="row g-4 mt-5">
+          <div class="col-md-4">
+            <div class="p-4 rounded-4 card-elev text-center">
+              <p class="eyebrow mb-2">🏅 Certificazioni</p>
+              <ul class="list-unstyled mb-0">
+                <li>Licenze UEFA B/C</li>
+                <li>Lauree in Scienze Motorie</li>
+                <li>Aggiornamento continuo</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 rounded-4 card-elev text-center">
+              <p class="eyebrow mb-2">🎯 Aree di eccellenza</p>
+              <div class="d-flex flex-wrap justify-content-center gap-2">
+                <span class="pill-muted">Tecnica</span>
+                <span class="pill-muted">Motorio</span>
+                <span class="pill-muted">Cognitivo</span>
+                <span class="pill-muted">Psicologico</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 rounded-4 card-elev text-center">
+              <p class="eyebrow mb-2">📊 Metodo AFT</p>
+              <p class="mb-0">Percorsi personalizzati, KPI e Report Lezione per progressi misurabili e continuità tra campo e performance.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-spaced text-center">
+      <div class="container">
+        <h3 class="fw-bold mb-2">Pronto per il prossimo livello?</h3>
+        <p class="mb-4">Prenota la tua lezione di prova gratuita e inizia il percorso AFT.</p>
+        <div class="d-flex justify-content-center gap-2 flex-wrap">
+          <a class="btn btn-primary btn-lg" href="contatti.html">Contattaci</a>
+          <a class="btn btn-outline-secondary btn-lg" href="recensioni.html">Leggi le recensioni</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="main-footer">
-    <small>&copy; 2025 AFT – Advanced Football Training</small>
+  <!-- Footer -->
+  <footer class="py-4 border-top footer-dark">
+    <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-2">
+      <small>&copy; 2026 AFT Èlite Academy</small>
+      <small>📍 Centro Sportivo S. Pertini – Via dello Sport 70, Cornaredo (MI)</small>
+    </div>
   </footer>
-  <script src="main.js"></script>
+
+  <!-- ══════════════════════════════════════
+       MODALS
+  ══════════════════════════════════════ -->
+
+  <!-- GRETA PODDA -->
+  <div class="modal fade" id="modal-greta" tabindex="-1" aria-labelledby="modal-greta-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge-founder me-2">⭐ Fondatrice</span>
+            <h5 class="modal-title d-inline fw-bold" id="modal-greta-label">Greta Podda</h5>
+            <p class="text-muted small mb-0">Direttrice Tecnica · Laurea in Scienze Motorie</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+        <div class="modal-body">
+          <p>Laureata in Scienze Motorie e con un passato da calciatrice in Serie B e Serie C, ho scelto di trasformare la mia passione in una missione: accompagnare ogni bambino e ragazzo nel percorso di crescita sportiva e personale. Vedere i progressi dei giovani atleti, la loro sicurezza crescere e il talento fiorire è ciò che mi motiva ogni giorno.</p>
+          <p>In AFT seguo personalmente l'area riabilitazione infortuni, la preparazione atletica di SpeedLab e la parte tecnico-tattica, creando percorsi completi e personalizzati che uniscono tecnica, mentalità, salute e performance. La mia esperienza sul campo mi permette di capire profondamente le sfide degli atleti e di guidarli con competenza, passione ed empatia verso il loro massimo potenziale.</p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <span class="badge text-bg-light border">Tecnica</span>
+            <span class="badge text-bg-light border">SpeedLab</span>
+            <span class="badge text-bg-light border">RecoveryLab</span>
+            <span class="badge text-bg-light border">Decision Making</span>
+            <span class="badge text-bg-light border">1vs1</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="contatti.html" class="btn btn-primary">Contattaci</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DONATO -->
+  <div class="modal fade" id="modal-donato" tabindex="-1" aria-labelledby="modal-donato-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge-founder me-2">⭐ Fondatore</span>
+            <h5 class="modal-title d-inline fw-bold" id="modal-donato-label">Donato</h5>
+            <p class="text-muted small mb-0">Responsabile Tecnico</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted fst-italic">Bio in arrivo.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="contatti.html" class="btn btn-primary">Contattaci</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANDREA FORNARI -->
+  <div class="modal fade" id="modal-andrea" tabindex="-1" aria-labelledby="modal-andrea-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title fw-bold" id="modal-andrea-label">Andrea Fornari</h5>
+            <p class="text-muted small mb-0">Istruttore Tecnico · UEFA B · Laureando Magistrale Sc. Motorie</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+        <div class="modal-body">
+          <p>Sono entrato in academy nel settembre 2023. Dico sempre che per me la chiave di tutto è trovare il modo, perché sono convinto che dentro ogni atleta ci siano capacità e potenzialità che dobbiamo far emergere. Credo che lo sport sia palestra di vita, per questo voglio affiancare l'atleta nel percorso seguendo non solo la componente tecnica ma anche quella tattica, fisica e psicologica.</p>
+          <p>Alleno dal 2018, e nella mia carriera ho avuto la fortuna di gestire ragazze e ragazzi di tutte le età, professionisti e dilettanti, sia in contesti individuali che di squadra. Attualmente sono anche viceallenatore U15 Nazionali presso AC Renate.</p>
+          <p>Il nostro metodo mette al centro l'atleta con screening valutativi tramite analisi e test, allenamenti individualizzati con sviluppo psicocinetico, cognitivo, propriocettivo e di critical scanning. Ogni seduta viene analizzata, confrontata e relazionata tra i coach per favorire lo sviluppo dell'atleta.</p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <span class="badge text-bg-light border">UEFA B</span>
+            <span class="badge text-bg-light border">SpeedLab</span>
+            <span class="badge text-bg-light border">Psicocinetica</span>
+            <span class="badge text-bg-light border">Screening</span>
+            <span class="badge text-bg-light border">Critical Scanning</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="contatti.html" class="btn btn-primary">Contattaci</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- YOORCH TORPOCO -->
+  <div class="modal fade" id="modal-yoorch" tabindex="-1" aria-labelledby="modal-yoorch-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title fw-bold" id="modal-yoorch-label">Yoorch Jerzy Alva Torpoco</h5>
+            <p class="text-muted small mb-0">Allenatore Tecnico · Ex Giocatore Professionista di Futsal</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+        <div class="modal-body">
+          <p>Ex giocatore di futsal con esperienza a livello professionale e universitario in Perù, ho sviluppato competenze tecniche, tattiche e una solida mentalità competitiva, fondata su disciplina e lavoro di squadra.</p>
+          <p>Attualmente opero come allenatore personale presso AFT a Milano, conducendo allenamenti individuali e di gruppo focalizzati sul miglioramento del controllo palla, coordinazione, dribbling e comprensione tattica del gioco.</p>
+          <p>Partecipo inoltre come volontario a progetti sportivi dedicati a bambini e giovani, contribuendo alla loro crescita sportiva e personale attraverso lo sport come strumento educativo e formativo.</p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <span class="badge text-bg-light border">Controllo palla</span>
+            <span class="badge text-bg-light border">Dribbling</span>
+            <span class="badge text-bg-light border">Coordinazione</span>
+            <span class="badge text-bg-light border">Tattica</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="contatti.html" class="btn btn-primary">Contattaci</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALESSANDRO SANGERMANO -->
+  <div class="modal fade" id="modal-ales" tabindex="-1" aria-labelledby="modal-ales-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title fw-bold" id="modal-ales-label">Alessandro Sangermano</h5>
+            <p class="text-muted small mb-0">Istruttore Tecnico · Football &amp; Management</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+        <div class="modal-body">
+          <p>La mia passione per il calcio nasce fin da piccolo e ad oggi continuo a coltivarla giorno dopo giorno studiando Football and Management all'università, trasformando quello che era un sogno da bambino in un percorso concreto per il mio futuro.</p>
+          <p>Il mio compito in AFT è accompagnare i ragazzi in un percorso di crescita tecnica e personale, aiutandoli a sviluppare le loro abilità individuali attraverso allenamenti personalizzati. Negli anni ho avuto modo di crescere come atleta e di approfondire le mie conoscenze come allenatore: questa esperienza mi ha permesso di comprendere quanto sia fondamentale lavorare sui dettagli tecnici fin da piccoli, ma sempre con passione ed entusiasmo.</p>
+          <p>Il mio obiettivo è trasmettere sicurezza, disciplina e amore per il calcio, creando un ambiente positivo in cui ogni ragazzo possa esprimere il proprio talento. <em>"La fatica di oggi è la vittoria di domani."</em></p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <span class="badge text-bg-light border">Tecnica individuale</span>
+            <span class="badge text-bg-light border">Giovanili</span>
+            <span class="badge text-bg-light border">Mentalità</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="contatti.html" class="btn btn-primary">Contattaci</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DANIELE ADDONATO -->
+  <div class="modal fade" id="modal-daniele" tabindex="-1" aria-labelledby="modal-daniele-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title fw-bold" id="modal-daniele-label">Daniele Addonato</h5>
+            <p class="text-muted small mb-0">Allenatore · Formazione Tecnico-Tattica Individuale</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+        <div class="modal-body">
+          <p>Allenatore con oltre 15 anni di esperienza nel settore giovanile, specializzato nello sviluppo tecnico individuale e nella crescita mentale del giovane atleta. Credo che il talento non sia solo una questione di tecnica, ma di mentalità, lettura del gioco e consapevolezza.</p>
+          <p>Nel mio percorso ho sempre lavorato per migliorare le squadre e valorizzare i singoli, costruendo giocatori più intelligenti tatticamente e più forti caratterialmente. L'attenzione ai dettagli, la qualità del gesto tecnico e la capacità di prendere decisioni corrette sotto pressione sono elementi centrali del mio metodo.</p>
+          <p>In AFT mi occupo di sviluppo tecnico individuale e lettura delle situazioni di gioco, accompagnando ogni ragazzo in un percorso che unisce crescita sportiva e sviluppo personale. Perché nel calcio moderno non basta saper giocare: serve capire prima degli altri cosa sta per succedere.</p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <span class="badge text-bg-light border">Lettura del gioco</span>
+            <span class="badge text-bg-light border">Tattica</span>
+            <span class="badge text-bg-light border">Mentalità</span>
+            <span class="badge text-bg-light border">Settore giovanile</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="contatti.html" class="btn btn-primary">Contattaci</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SANTIAGO MINA -->
+  <div class="modal fade" id="modal-santiago" tabindex="-1" aria-labelledby="modal-santiago-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title fw-bold" id="modal-santiago-label">Santiago Manuel Mina</h5>
+            <p class="text-muted small mb-0">Coach · Settore Giovanile</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+        <div class="modal-body">
+          <p>Dopo tanti anni da calciatore, arrivando fino in Promozione, nel 2019 si è presentata la possibilità di allenare gli esordienti. Da quel momento è iniziato un viaggio che mi ha fatto crescere sempre di più questa passione per il calcio. Passando da esordienti, primi calci e pulcini, ho capito quanto sia importante una figura come la mia nel settore giovanile.</p>
+          <p>Nel 2022 è iniziata una nuova avventura in AFT, in cui ho capito fin da subito di essere nel posto giusto per crescere. Grazie all'empatia e l'esperienza maturata in questi anni, sono riuscito a costruire rapporti solidi con tantissimi atleti portandoli avanti negli anni: questa è la soddisfazione più grande!</p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <span class="badge text-bg-light border">Giovanili</span>
+            <span class="badge text-bg-light border">Empatia</span>
+            <span class="badge text-bg-light border">Crescita personale</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="contatti.html" class="btn btn-primary">Contattaci</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GIULIO TODISCO -->
+  <div class="modal fade" id="modal-giulio" tabindex="-1" aria-labelledby="modal-giulio-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title fw-bold" id="modal-giulio-label">Giulio Todisco</h5>
+            <p class="text-muted small mb-0">Allenatore Calcio Giovanile · UEFA B</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+        <div class="modal-body">
+          <p>Allenatore di calcio giovanile in possesso del patentino UEFA B, con oltre 10 anni di esperienza in panchina. Nel mio percorso ho avuto la possibilità di confrontarmi con il calcio professionistico, lavorando prima con Sangiuliano City, poi con Novara e attualmente con Pergolettese.</p>
+          <p>Per me il campo non è soltanto uno spazio di allenamento, ma un luogo educativo e di crescita, dove lo sport diventa uno strumento per formare prima uomini e poi calciatori. Credo che il compito di un allenatore non sia soltanto insegnare tecnica o tattica, ma accompagnare i ragazzi nello sviluppo della loro identità, trasmettendo valori come responsabilità, rispetto e consapevolezza.</p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <span class="badge text-bg-light border">UEFA B</span>
+            <span class="badge text-bg-light border">Giovanili</span>
+            <span class="badge text-bg-light border">Valori</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="contatti.html" class="btn btn-primary">Contattaci</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAMIANO RASTELLI -->
+  <div class="modal fade" id="modal-damiano" tabindex="-1" aria-labelledby="modal-damiano-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title fw-bold" id="modal-damiano-label">Damiano Rastelli</h5>
+            <p class="text-muted small mb-0">Coach sul Campo · Serie D</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+        <div class="modal-body">
+          <p>Calciatore in Serie D e allenatore appassionato, il mio obiettivo è trasferire sul campo tutto ciò che l'agonismo mi insegna ogni giorno. Credo che l'esperienza vissuta in prima persona sia il mezzo più potente per guidare bambini e ragazzi nel loro percorso di crescita.</p>
+          <p>In AFT mi occupo specificamente del perfezionamento individuale con la palla, curando percorsi personalizzati volti a migliorare il bagaglio tecnico di ogni atleta. Lavoro per insegnare ai ragazzi a leggere le situazioni, aiutandoli a capire quando e perché compiere una scelta piuttosto che un'altra.</p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <span class="badge text-bg-light border">Tecnica</span>
+            <span class="badge text-bg-light border">1vs1</span>
+            <span class="badge text-bg-light border">Decision Making</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="contatti.html" class="btn btn-primary">Contattaci</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MATTIA PACIFICO -->
+  <div class="modal fade" id="modal-mattia" tabindex="-1" aria-labelledby="modal-mattia-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title fw-bold" id="modal-mattia-label">Mattia Pacifico</h5>
+            <p class="text-muted small mb-0">Laureando Scienze Motorie · Allenatore Under 10 (Pro Sesto)</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+        <div class="modal-body">
+          <p>Laureando in Scienze Motorie, ho scelto di dedicarmi alla crescita dei bambini e dei ragazzi nelle fasce d'età più giovani, con l'obiettivo di stimolarli a diventare la versione migliore di loro stessi e di vivere il calcio con entusiasmo e spensieratezza.</p>
+          <p>In AFT mi occupo della parte tecnico-tattica, creando percorsi di allenamento personalizzati mirati a favorire lo sviluppo tecnico dei ragazzi e a supportarli nel loro percorso di crescita sportiva.</p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <span class="badge text-bg-light border">Giovanili</span>
+            <span class="badge text-bg-light border">Tecnica</span>
+            <span class="badge text-bg-light border">Sviluppo</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="contatti.html" class="btn btn-primary">Contattaci</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

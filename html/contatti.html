@@ -2,58 +2,234 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Contatti - AFT</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Contatti – AFT Èlite Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-  <header class="main-header">
-    <div class="logo-area">
-      <img src="logo.png" alt="Logo AFT">
-      <span class="brand-title">AFT</span>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="../asset/Logo.png" alt="AFT Logo" width="48" height="48">
+        <span class="brand-badge">AFT</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="chi-siamo.html">Chi siamo</a></li>
+          <li class="nav-item"><a class="nav-link" href="staff.html">Staff</a></li>
+          <li class="nav-item"><a class="nav-link" href="servizi.html">Servizi</a></li>
+          <li class="nav-item"><a class="nav-link" href="storico.html">Storico</a></li>
+          <li class="nav-item"><a class="nav-link" href="eventi.html">Eventi</a></li>
+          <li class="nav-item"><a class="nav-link" href="recensioni.html">Recensioni</a></li>
+          <li class="nav-item active"><a class="nav-link active" aria-current="page" href="contatti.html">Contattaci</a></li>
+        </ul>
+      </div>
     </div>
-    <nav class="main-nav">
-      <ul id="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="chi-siamo.html">Chi siamo</a></li>
-        <li><a href="staff.html">Staff</a></li>
-        <li><a href="servizi.html">Servizi</a></li>
-        <li><a href="storico.html">Storico</a></li>
-        <li><a href="eventi.html">Eventi</a></li>
-        <li><a href="recensioni.html">Recensioni</a></li>
-        <li><a href="contatti.html" class="active">Contatti</a></li>
-      </ul>
-    </nav>
+  </nav>
+
+  <!-- Hero -->
+  <header class="py-5 bg-stripe border-bottom">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-2">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Contatti</li>
+        </ol>
+      </nav>
+      <h1 class="fw-bold mb-2">Contattaci</h1>
+      <p class="mb-0">Prenota una prova, chiedi informazioni su servizi ed eventi, o collabora con AFT.</p>
+    </div>
   </header>
 
-  <main class="section">
-    <h1>Contattaci</h1>
-    <form id="contact-form" action="mailto:info@aft.com" method="POST" enctype="text/plain" novalidate>
-      <label for="name">Nome</label>
-      <input id="name" name="name" type="text" required minlength="3" />
+  <main>
+    <section class="section-spaced">
+      <div class="container">
+        <div class="row g-5">
 
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" required />
+          <!-- ── FORM ── -->
+          <div class="col-lg-7">
+            <p class="eyebrow mb-3">✉️ Scrivici</p>
 
-      <label for="message">Messaggio</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
+            <!-- Messaggio successo (nascosto) -->
+            <div id="form-success" class="alert alert-success d-none" role="alert">
+              ✅ Messaggio inviato! Ti risponderemo al più presto.
+            </div>
 
-      <button type="submit" class="btn primary">Invia</button>
-    </form>
+            <form id="contact-form" novalidate>
 
-    <section class="contact-info">
-      <h2>Informazioni</h2>
-      <p>📍 Centro Sandro Pertini, via dello Sport 70, Cornaredo (MI)</p>
-      <p>📞 Donato: 331 272 5217</p>
-      <p>📞 Greta: 329 146 1873</p>
-      <p>✉ info@aft.com</p>
+              <!-- Nome -->
+              <div class="mb-3">
+                <label for="c-nome" class="form-label fw-semibold">
+                  Nome <span class="text-danger">*</span>
+                </label>
+                <input type="text" class="form-control" id="c-nome" name="nome"
+                       placeholder="Il tuo nome" required minlength="2">
+                <div class="invalid-feedback">Inserisci il tuo nome (min. 2 caratteri).</div>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="c-email" class="form-label fw-semibold">
+                  Email <span class="text-danger">*</span>
+                </label>
+                <input type="email" class="form-control" id="c-email" name="email"
+                       placeholder="tuaemail@esempio.com" required>
+                <div class="invalid-feedback">Inserisci un indirizzo email valido.</div>
+              </div>
+
+              <!-- Oggetto -->
+              <div class="mb-3">
+                <label for="c-oggetto" class="form-label fw-semibold">
+                  Oggetto <span class="text-danger">*</span>
+                </label>
+                <select class="form-select" id="c-oggetto" name="oggetto" required>
+                  <option value="" selected disabled>Seleziona un motivo…</option>
+                  <option>Prova gratuita</option>
+                  <option>Informazioni sui servizi</option>
+                  <option>Eventi / Academy</option>
+                  <option>Collaborazioni</option>
+                  <option>Altro</option>
+                </select>
+                <div class="invalid-feedback">Seleziona un oggetto.</div>
+              </div>
+
+              <!-- Messaggio -->
+              <div class="mb-4">
+                <label for="c-messaggio" class="form-label fw-semibold">
+                  Messaggio <span class="text-danger">*</span>
+                </label>
+                <textarea class="form-control" id="c-messaggio" name="messaggio" rows="5"
+                          placeholder="Scrivi qui il tuo messaggio…" required minlength="10"></textarea>
+                <div class="invalid-feedback">Scrivi un messaggio (min. 10 caratteri).</div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg w-100">
+                Invia messaggio
+              </button>
+
+            </form>
+          </div>
+
+         <!-- ── INFO + MAPPA ── -->
+<div class="col-lg-5">
+  <p class="eyebrow mb-3">📍 Informazioni</p>
+
+  <!-- Info box compatto -->
+  <div class="card card-elev mb-3">
+    <div class="card-body py-3">
+
+      <div class="row g-2 small">
+
+        <div class="col-12 d-flex gap-2 align-items-start">
+          <span>📍</span>
+          <div>
+            <span class="fw-semibold">Sede: </span>
+            <span class="text-muted">Centro Sportivo S. Pertini, Via dello Sport 70, Cornaredo (MI)</span>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 d-flex gap-2 align-items-start">
+          <span>📞</span>
+          <div>
+            <span class="fw-semibold">Donato: </span>
+            <a href="tel:+393312725217" class="text-decoration-none text-muted">331 272 5217</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 d-flex gap-2 align-items-start">
+          <span>📞</span>
+          <div>
+            <span class="fw-semibold">Greta: </span>
+            <a href="tel:+393291461873" class="text-decoration-none text-muted">329 146 1873</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 d-flex gap-2 align-items-start">
+          <span>✉️</span>
+          <div>
+            <a href="mailto:info@aft.com" class="text-decoration-none text-muted">info@aft.com</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 d-flex gap-2 align-items-start">
+          <span>🕐</span>
+          <div class="text-muted">
+            Lun–Ven: 8:00–19:00 · Sab: 9:00–13:00
+          </div>
+        </div>
+
+      </div>
+      <!-- Mappa Google Maps embed -->
+  <div class="rounded-4 overflow-hidden border" style="height: 260px;">
+    <iframe
+      title="Sede AFT – Centro Sportivo S. Pertini, Cornaredo"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.0!2d9.0327!3d45.4954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786bf3b2e2d6a3b%3A0x1!2sVia+dello+Sport+70%2C+Cornaredo+MI!5e0!3m2!1sit!2sit!4v1700000000000"
+      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+  <a href="https://maps.google.com/?q=Via+dello+Sport+70,+Cornaredo+MI"
+     target="_blank" rel="noopener"
+     class="btn btn-outline-secondary btn-sm w-100 mt-2">
+    📍 Apri in Google Maps →
+  </a>
+    </div>
+    
+  </div>
+
+  
+
+</div>
+
+        </div>
+      </div>
     </section>
+
+    <!-- CTA finale -->
+    <section class="section-spaced bg-stripe text-center">
+      <div class="container">
+        <h3 class="fw-bold mb-2">Pronto per il prossimo livello?</h3>
+        <p class="mb-4">Prenota la tua lezione di prova gratuita e inizia il percorso AFT.</p>
+        <div class="d-flex justify-content-center gap-2 flex-wrap">
+          <a class="btn btn-primary btn-lg" href="recensioni.html">Leggi le recensioni</a>
+          <a class="btn btn-outline-secondary btn-lg" href="servizi.html">Scopri i servizi</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="main-footer">
-    <small>&copy; 2025 AFT – Advanced Football Training</small>
+  <!-- Footer -->
+  <footer class="py-4 border-top footer-dark">
+    <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-2">
+      <small>&copy; 2026 AFT Èlite Academy</small>
+      <small>📍 Centro Sportivo S. Pertini – Via dello Sport 70, Cornaredo (MI)</small>
+    </div>
   </footer>
-  
-  <script src="main.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      this.classList.add('was-validated');
+      if (!this.checkValidity()) return;
+
+      // Qui puoi collegare un backend/Formspree/EmailJS
+      // Per ora mostra il messaggio di successo e resetta il form
+      document.getElementById('form-success').classList.remove('d-none');
+      this.reset();
+      this.classList.remove('was-validated');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
 </body>
 </html>

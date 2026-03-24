@@ -2,38 +2,359 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Recensioni - AFT</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Recensioni – AFT Èlite Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .star-rating { color: #f5a623; font-size: 1.1rem; letter-spacing: .05em; }
+    .review-card { border-left: 3px solid #c0392b; }
+    .rating-btn.active { background: #c0392b; color: #fff; border-color: #c0392b; }
+    .star-input label { font-size: 1.5rem; color: #ccc; cursor: pointer; transition: color .15s; }
+    .star-input input:checked ~ label,
+    .star-input label:hover,
+    .star-input label:hover ~ label { color: #f5a623; }
+    .star-input { display: flex; flex-direction: row-reverse; justify-content: flex-end; }
+    .star-input input { display: none; }
+  </style>
 </head>
 <body>
-  <header class="main-header">
-    <div class="logo-area">
-      <img src="logo.png" alt="Logo AFT">
-      <span class="brand-title">AFT</span>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="../asset/Logo.png" alt="AFT Logo" width="48" height="48">
+        <span class="brand-badge">AFT</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="chi-siamo.html">Chi siamo</a></li>
+          <li class="nav-item"><a class="nav-link" href="staff.html">Staff</a></li>
+          <li class="nav-item"><a class="nav-link" href="servizi.html">Servizi</a></li>
+          <li class="nav-item"><a class="nav-link" href="storico.html">Storico</a></li>
+          <li class="nav-item"><a class="nav-link" href="eventi.html">Eventi</a></li>
+          <li class="nav-item active"><a class="nav-link active" aria-current="page" href="recensioni.html">Recensioni</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-primary" href="contatti.html">Contattaci</a></li>
+        </ul>
+      </div>
     </div>
-    <nav class="main-nav">
-      <ul id="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="chi-siamo.html">Chi siamo</a></li>
-        <li><a href="staff.html">Staff</a></li>
-        <li><a href="servizi.html">Servizi</a></li>
-        <li><a href="storico.html">Storico</a></li>
-        <li><a href="eventi.html">Eventi</a></li>
-        <li><a href="recensioni.html" class="active">Recensioni</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-      </ul>
-    </nav>
+  </nav>
+
+  <!-- Hero -->
+  <header class="py-5 bg-stripe border-bottom">
+    <div class="container d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+      <div>
+        <nav aria-label="breadcrumb" class="mb-2">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Recensioni</li>
+          </ol>
+        </nav>
+        <h1 class="fw-bold mb-1">Recensioni</h1>
+        <p class="mb-0">Esperienze reali di atleti e famiglie sul percorso AFT.</p>
+      </div>
+      <button class="btn btn-primary flex-shrink-0" data-bs-toggle="modal" data-bs-target="#modal-recensione">
+        ✍️ Lascia una recensione
+      </button>
+    </div>
   </header>
 
-  <main class="section recensioni-section">
-    <h1>Recensioni</h1>
-    <div id="reviews-container"></div>
+  <main>
+
+    <!-- Filtri rating -->
+    <section class="py-4 border-bottom bg-light">
+      <div class="container">
+        <div class="d-flex flex-wrap gap-2 align-items-center">
+          <span class="small text-muted me-1">Filtra per:</span>
+          <button class="btn btn-primary btn-sm rating-btn active" data-rating="tutti">Tutte</button>
+          <button class="btn btn-outline-secondary btn-sm rating-btn" data-rating="5">★★★★★</button>
+          <button class="btn btn-outline-secondary btn-sm rating-btn" data-rating="4">★★★★☆</button>
+          <button class="btn btn-outline-secondary btn-sm rating-btn" data-rating="3">★★★☆☆</button>
+          <button class="btn btn-outline-secondary btn-sm rating-btn" data-rating="2">★★☆☆☆</button>
+          <button class="btn btn-outline-secondary btn-sm rating-btn" data-rating="1">★☆☆☆☆</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Griglia recensioni -->
+    <section class="section-spaced">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="griglia-recensioni">
+
+          <!-- Recensione 1 -->
+          <div class="col review-item" data-rating="5">
+            <div class="card card-elev review-card h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div>
+                    <strong>Mario R.</strong>
+                    <span class="badge text-bg-light border ms-2 small">Genitore</span>
+                  </div>
+                  <span class="star-rating">★★★★★</span>
+                </div>
+                <p class="mb-0">"Report chiari e miglioramenti evidenti in tecnica e decision making."</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recensione 2 -->
+          <div class="col review-item" data-rating="4">
+            <div class="card card-elev review-card h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div>
+                    <strong>Giulia S.</strong>
+                    <span class="badge text-bg-light border ms-2 small">Atleta</span>
+                  </div>
+                  <span class="star-rating">★★★★☆</span>
+                </div>
+                <p class="mb-0">"Allenamenti intensi e divertenti; SpeedLab super utile."</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recensione 3 (placeholder) -->
+          <div class="col review-item" data-rating="5">
+            <div class="card card-elev review-card h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div>
+                    <strong>Luca M.</strong>
+                    <span class="badge text-bg-light border ms-2 small">Genitore</span>
+                  </div>
+                  <span class="star-rating">★★★★★</span>
+                </div>
+                <p class="mb-0">"Mio figlio è cresciuto tantissimo, non solo tecnicamente. Il metodo AFT fa davvero la differenza."</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recensione 4 (placeholder) -->
+          <div class="col review-item" data-rating="5">
+            <div class="card card-elev review-card h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div>
+                    <strong>Sara T.</strong>
+                    <span class="badge text-bg-light border ms-2 small">Atleta</span>
+                  </div>
+                  <span class="star-rating">★★★★★</span>
+                </div>
+                <p class="mb-0">"Percorso strutturato e personalizzato. I mister sono sempre presenti e preparatissimi."</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recensione 5 (placeholder) -->
+          <div class="col review-item" data-rating="4">
+            <div class="card card-elev review-card h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div>
+                    <strong>Andrea P.</strong>
+                    <span class="badge text-bg-light border ms-2 small">Genitore</span>
+                  </div>
+                  <span class="star-rating">★★★★☆</span>
+                </div>
+                <p class="mb-0">"Summer Academy fantastica. Organizzazione impeccabile e ragazzi entusiasti."</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recensione 6 (placeholder) -->
+          <div class="col review-item" data-rating="5">
+            <div class="card card-elev review-card h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div>
+                    <strong>Marco V.</strong>
+                    <span class="badge text-bg-light border ms-2 small">Atleta</span>
+                  </div>
+                  <span class="star-rating">★★★★★</span>
+                </div>
+                <p class="mb-0">"Born to Fly mi ha cambiato come portiere. Tecnica, mentalità e lettura del gioco: tutto migliorato."</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- fine griglia -->
+
+        <!-- Nessun risultato (nascosto di default) -->
+        <div id="no-results" class="text-center py-5 d-none">
+          <p class="text-muted">Nessuna recensione per questo filtro.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA invio recensione -->
+    <section class="section-spaced bg-light text-center">
+      <div class="container">
+        <h3 class="fw-bold mb-2">Vuoi condividere la tua esperienza?</h3>
+        <p class="mb-4">Il tuo feedback aiuta a migliorare servizi e percorsi AFT.</p>
+        <div class="d-flex justify-content-center gap-2 flex-wrap">
+          <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modal-recensione">
+            ✍️ Lascia una recensione
+          </button>
+          <a class="btn btn-outline-secondary btn-lg" href="contatti.html">Scrivi ad AFT</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="main-footer">
-    <small>&copy; 2025 AFT – Advanced Football Training</small>
+  <!-- Footer -->
+  <footer class="py-4 border-top footer-dark">
+    <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-2">
+      <small>&copy; 2026 AFT Èlite Academy</small>
+      <small>📍 Centro Sportivo S. Pertini – Via dello Sport 70, Cornaredo (MI)</small>
+    </div>
   </footer>
-  <script src="main.js"></script>
+
+  <!-- ════════════════════════════════════
+       MODAL – LASCIA UNA RECENSIONE
+  ════════════════════════════════════ -->
+  <div class="modal fade" id="modal-recensione" tabindex="-1" aria-labelledby="modal-recensione-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="modal-recensione-label">✍️ Lascia una recensione</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+        <div class="modal-body">
+          <form id="form-recensione" novalidate>
+
+            <!-- Nome -->
+            <div class="mb-3">
+              <label for="rec-nome" class="form-label fw-semibold">Nome <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="rec-nome" placeholder="Il tuo nome" required>
+              <div class="invalid-feedback">Inserisci il tuo nome.</div>
+            </div>
+
+            <!-- Ruolo -->
+            <div class="mb-3">
+              <label for="rec-ruolo" class="form-label fw-semibold">Ruolo <span class="text-danger">*</span></label>
+              <select class="form-select" id="rec-ruolo" required>
+                <option value="" selected disabled>Seleziona…</option>
+                <option>Genitore</option>
+                <option>Atleta</option>
+                <option>Altro</option>
+              </select>
+              <div class="invalid-feedback">Seleziona un ruolo.</div>
+            </div>
+
+            <!-- Valutazione -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold d-block">Valutazione <span class="text-danger">*</span></label>
+              <div class="star-input" id="star-input">
+                <input type="radio" name="rating" id="s5" value="5"><label for="s5">★</label>
+                <input type="radio" name="rating" id="s4" value="4"><label for="s4">★</label>
+                <input type="radio" name="rating" id="s3" value="3"><label for="s3">★</label>
+                <input type="radio" name="rating" id="s2" value="2"><label for="s2">★</label>
+                <input type="radio" name="rating" id="s1" value="1"><label for="s1">★</label>
+              </div>
+              <div id="rating-error" class="text-danger small d-none mt-1">Seleziona una valutazione.</div>
+            </div>
+
+            <!-- Testo -->
+            <div class="mb-3">
+              <label for="rec-testo" class="form-label fw-semibold">Recensione <span class="text-danger">*</span></label>
+              <textarea class="form-control" id="rec-testo" rows="3"
+                        placeholder="Racconta la tua esperienza con AFT…" required></textarea>
+              <div class="invalid-feedback">Scrivi la tua recensione.</div>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annulla</button>
+          <button type="button" class="btn btn-primary" id="btn-pubblica">Pubblica</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ── Filtri rating ──
+    document.querySelectorAll('.rating-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.rating-btn').forEach(b => {
+          b.classList.remove('active', 'btn-primary');
+          b.classList.add('btn-outline-secondary');
+        });
+        this.classList.add('active', 'btn-primary');
+        this.classList.remove('btn-outline-secondary');
+
+        const rating = this.dataset.rating;
+        let visible = 0;
+        document.querySelectorAll('.review-item').forEach(item => {
+          const show = rating === 'tutti' || item.dataset.rating === rating;
+          item.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+        document.getElementById('no-results').classList.toggle('d-none', visible > 0);
+      });
+    });
+
+    // ── Pubblica recensione ──
+    document.getElementById('btn-pubblica').addEventListener('click', function () {
+      const form    = document.getElementById('form-recensione');
+      const nome    = document.getElementById('rec-nome');
+      const ruolo   = document.getElementById('rec-ruolo');
+      const testo   = document.getElementById('rec-testo');
+      const ratingEl = document.querySelector('input[name="rating"]:checked');
+      const ratingErr = document.getElementById('rating-error');
+
+      form.classList.add('was-validated');
+      let valid = form.checkValidity();
+
+      if (!ratingEl) {
+        ratingErr.classList.remove('d-none');
+        valid = false;
+      } else {
+        ratingErr.classList.add('d-none');
+      }
+
+      if (!valid) return;
+
+      // Costruisce le stelle
+      const stars = parseInt(ratingEl.value);
+      const starsHtml = '★'.repeat(stars) + '☆'.repeat(5 - stars);
+
+      // Aggiunge la card in cima alla griglia
+      const griglia = document.getElementById('griglia-recensioni');
+      const col = document.createElement('div');
+      col.className = 'col review-item';
+      col.dataset.rating = stars;
+      col.innerHTML = `
+        <div class="card card-elev review-card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <div>
+                <strong>${nome.value.trim()}</strong>
+                <span class="badge text-bg-light border ms-2 small">${ruolo.value}</span>
+              </div>
+              <span class="star-rating">${starsHtml}</span>
+            </div>
+            <p class="mb-0">"${testo.value.trim()}"</p>
+          </div>
+        </div>`;
+      griglia.prepend(col);
+
+      // Reset e chiusura modal
+      form.reset();
+      form.classList.remove('was-validated');
+      ratingErr.classList.add('d-none');
+      bootstrap.Modal.getInstance(document.getElementById('modal-recensione')).hide();
+    });
+  </script>
+
 </body>
 </html>

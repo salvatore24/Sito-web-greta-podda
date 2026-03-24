@@ -2,50 +2,272 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Storico - AFT</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Storico – AFT Èlite Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    /* ── Timeline ── */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: .6rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #c0392b, #e0e0e0);
+      border-radius: 2px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -2rem;
+      top: .25rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      border-radius: 50%;
+      background: #c0392b;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px #c0392b;
+    }
+    .timeline-year {
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #c0392b;
+      margin-bottom: .25rem;
+    }
+
+    /* ── Stat numbers ── */
+    .stat-number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #c0392b;
+      line-height: 1.1;
+    }
+  </style>
 </head>
 <body>
-  <header class="main-header">
-    <div class="logo-area">
-      <img src="logo.png" alt="Logo AFT">
-      <span class="brand-title">AFT</span>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="../asset/Logo.png" alt="AFT Logo" width="48" height="48">
+        <span class="brand-badge">AFT</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="chi-siamo.html">Chi siamo</a></li>
+          <li class="nav-item"><a class="nav-link" href="staff.html">Staff</a></li>
+          <li class="nav-item"><a class="nav-link" href="servizi.html">Servizi</a></li>
+          <li class="nav-item active"><a class="nav-link active" aria-current="page" href="storico.html">Storico</a></li>
+          <li class="nav-item"><a class="nav-link" href="eventi.html">Eventi</a></li>
+          <li class="nav-item"><a class="nav-link" href="recensioni.html">Recensioni</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-primary" href="contatti.html">Contattaci</a></li>
+        </ul>
+      </div>
     </div>
-    <nav class="main-nav">
-      <ul id="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="chi-siamo.html">Chi siamo</a></li>
-        <li><a href="staff.html">Staff</a></li>
-        <li><a href="servizi.html">Servizi</a></li>
-        <li><a href="storico.html" class="active">Storico</a></li>
-        <li><a href="eventi.html">Eventi</a></li>
-        <li><a href="recensioni.html">Recensioni</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-      </ul>
-    </nav>
+  </nav>
+
+  <!-- Hero -->
+  <header class="py-5 bg-stripe border-bottom">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-2">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Storico</li>
+        </ol>
+      </nav>
+      <h1 class="fw-bold mb-2">La nostra storia</h1>
+      <p class="mb-0">Dal 2020, un percorso di crescita continua nella formazione tecnico-motoria d'élite.</p>
+    </div>
   </header>
 
-  <main class="section">
-    <h1>La nostra storia</h1>
-    <p>Fondata nel 2020, AFT si è affermata come centro d’eccellenza per la formazione tecnico-motoria di calciatori di ogni livello.</p>
-    
-    <h2>Numeri e traguardi</h2>
-    <ul>
-      <li>Oltre 400 atleti formati</li>
-      <li>15 mister professionisti qualificati</li>
-      <li>Workshop mensili dedicati</li>
-      <li>Camp estivi con oltre 100 partecipanti</li>
-      <li>Collaborazioni con società professionistiche</li>
-    </ul>
+  <main>
 
-    <h2>Progetti in corso</h2>
-    <p>Programmi innovativi come SpeedLab, RecoveryLab e Screening Atletico per garantire formazione completa e sicurezza.</p>
+    <!-- Timeline + Numeri -->
+    <section class="section-spaced">
+      <div class="container">
+        <div class="row g-5">
+
+          <!-- Timeline -->
+          <div class="col-lg-7">
+            <p class="eyebrow mb-4">🕐 Timeline</p>
+            <div class="timeline">
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2020</div>
+                <h5 class="fw-bold mb-1">Nasce AFT</h5>
+                <p class="mb-2">Impostazione del Metodo, prime lezioni individuali e di gruppo.</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge text-bg-light border">Team fondatore</span>
+                  <span class="badge text-bg-light border">Avvio Report Lezione</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2021 – 2022</div>
+                <h5 class="fw-bold mb-1">Crescita delle Academy</h5>
+                <p class="mb-2">Prime collaborazioni con società professionistiche e avvio dei workshop mensili.</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge text-bg-light border">Workshop mensili</span>
+                  <span class="badge text-bg-light border">SpeedLab v1</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2023 – 2024</div>
+                <h5 class="fw-bold mb-1">Born to Fly & KPI avanzati</h5>
+                <p class="mb-2">Introduzione del percorso dedicato ai portieri e potenziamento del tracking KPI.</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge text-bg-light border">RecoveryLab</span>
+                  <span class="badge text-bg-light border">Kit ufficiale AFT</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2025</div>
+                <h5 class="fw-bold mb-1">Summer Academy & Pre-Season</h5>
+                <p class="mb-2">Camp estivi, scouting con società professionistiche e tornei tematici.</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge text-bg-light border">Screening Atletico</span>
+                  <span class="badge text-bg-light border">Report avanzati</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:#222; box-shadow:0 0 0 2px #222;"></div>
+                <div class="timeline-year" style="color:#222;">Oggi</div>
+                <h5 class="fw-bold mb-1">Rete in espansione</h5>
+                <p class="mb-2">Staff di 15 mister e programmi completi per ogni ruolo e fascia d'età.</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge text-bg-light border">Tecnico · Motorio · Cognitivo · Psicologico</span>
+                  <span class="badge text-bg-light border">Partnership in crescita</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Numeri -->
+          <div class="col-lg-5">
+            <p class="eyebrow mb-4">📊 Numeri & Traguardi</p>
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="p-4 rounded-4 card-elev text-center h-100">
+                  <div class="stat-number">400+</div>
+                  <div class="small mt-1">Atleti formati</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-4 rounded-4 card-elev text-center h-100">
+                  <div class="stat-number">15</div>
+                  <div class="small mt-1">Mister professionisti</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-4 rounded-4 card-elev text-center h-100">
+                  <div class="stat-number">12+</div>
+                  <div class="small mt-1">Workshop / anno</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-4 rounded-4 card-elev text-center h-100">
+                  <div class="stat-number">100+</div>
+                  <div class="small mt-1">Partecipanti ai camp estivi</div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-3">
+              <div class="p-4 rounded-4 card-elev">
+                <ul class="list-unstyled list-compact mb-0">
+                  <li><span class="check">✔</span> Collaborazioni con società professionistiche</li>
+                  <li><span class="check">✔</span> Programmi su misura con KPI e Report</li>
+                  <li><span class="check">✔</span> Integrazione SpeedLab, RecoveryLab e Screening</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Progetti in corso -->
+    <section class="section-spaced bg-light">
+      <div class="container">
+        <p class="eyebrow mb-2">🚀 Progetti in corso</p>
+        <h2 class="fw-bold mb-4">Innovazione continua</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body">
+                <span class="icon-pill mb-2">⚡ SpeedLab 2.0</span>
+                <h5 class="card-title mt-2">SpeedLab 2.0</h5>
+                <p class="mb-0">Nuovi protocolli su accelerazione, frequenza e forza reattiva con test periodici.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body">
+                <span class="icon-pill mb-2">♻️ RecoveryLab</span>
+                <h5 class="card-title mt-2">RecoveryLab</h5>
+                <p class="mb-0">Percorsi di ritorno in campo sicuri, con progressioni validate e prevenzione recidive.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card card-elev h-100">
+              <div class="card-body">
+                <span class="icon-pill mb-2">📊 Screening Atletico</span>
+                <h5 class="card-title mt-2">Screening Atletico</h5>
+                <p class="mb-0">Valutazioni su forza, mobilità e coordinazione per costruire programmi personalizzati.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-spaced text-center">
+      <div class="container">
+        <h3 class="fw-bold mb-2">Vuoi far parte della storia AFT?</h3>
+        <p class="mb-4">Contatta l'Academy per collaborazioni, tesseramenti o nuovi progetti.</p>
+        <a class="btn btn-primary btn-lg" href="contatti.html">Contattaci</a>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="main-footer">
-    <small>&copy; 2025 AFT – Advanced Football Training</small>
+  <!-- Footer -->
+  <footer class="py-4 border-top footer-dark">
+    <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-2">
+      <small>&copy; 2026 AFT Èlite Academy</small>
+      <small>📍 Centro Sportivo S. Pertini – Via dello Sport 70, Cornaredo (MI)</small>
+    </div>
   </footer>
-  <script src="main.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
