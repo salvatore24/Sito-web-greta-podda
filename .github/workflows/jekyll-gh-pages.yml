@@ -37,9 +37,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Specifica la cartella dove si trovano i file HTML
-          # L'azione caricherà il CONTENUTO di questa cartella come radice del sito
-          path: './html'
+          # Carica tutto il repository per includere asset e js esterni
+          path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
