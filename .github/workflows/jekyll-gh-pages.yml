@@ -27,18 +27,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # Questo passaggio "sistema" i file prima del caricamento
-      - name: Prepare deployment
+      # Questo passaggio prepara i file spostandoli dove serve
+      - name: Prepare Assets
         run: |
-          # Copia i file necessari dentro la cartella html per averli tutti insieme
           cp -r asset html/ 2>/dev/null || true
           cp main.js html/ 2>/dev/null || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Carichiamo la cartella html che ora contiene TUTTO
-          path: './html'
+          path: './html' # Pubblica il contenuto della cartella html
 
       - name: Deploy to GitHub Pages
         id: deployment
