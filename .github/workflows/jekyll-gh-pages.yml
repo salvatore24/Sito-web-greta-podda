@@ -1,27 +1,20 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
-  # Esegue il workflow su ogni push verso il branch "main"
   push:
     branches: ["main"]
-
-  # Permette di avviare il workflow manualmente dalla scheda Actions
   workflow_dispatch:
 
-# Imposta i permessi del GITHUB_TOKEN per consentire il deployment su GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Consente un solo deployment simultaneo, saltando le esecuzioni in coda tra quella in corso e l'ultima.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Singolo job di deployment
   deploy:
     environment:
       name: github-pages
@@ -34,11 +27,18 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      # Questo passaggio "sistema" i file prima del caricamento
+      - name: Prepare deployment
+        run: |
+          # Copia i file necessari dentro la cartella html per averli tutti insieme
+          cp -r asset html/ 2>/dev/null || true
+          cp main.js html/ 2>/dev/null || true
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Carica tutto il repository per includere asset e js esterni
-          path: '.'
+          # Carichiamo la cartella html che ora contiene TUTTO
+          path: './html'
 
       - name: Deploy to GitHub Pages
         id: deployment
